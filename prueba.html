@@ -1,0 +1,50 @@
+<html><head>
+    <title id="text">Test de la api xml del servicio MAILCERT</title>
+    <meta http-equiv="Pragma" content="no-cache" >
+    <meta http-equiv="Generator" content="Lleida.net" >
+   </head> <body bgcolor="#3344cc">
+   <form action="http://mailcertapi.lleida.net/cgi-bin/mailcertapi.cgi" method="post">
+   <TEXTAREA rows="8" cols="100%" NAME="xml">
+   <?xml version='1.0' encoding='iso-8859-1'?>
+   <list_pdf>
+    <user>sodigsa@ec</user>
+    <password>TIiANcmymJ</password>
+   </list_pdf>
+   </TEXTAREA>
+   <br><br> <input type="submit" value="Enviar consulta list_pdf">
+   </form>
+   <form action="http://mailcertapi.lleida.net/cgi-bin/mailcertapi.cgi" method="post">
+    <TEXTAREA rows="8" cols="100%" NAME="xml">
+    <?xml version='1.0' encoding='iso-8859-1'?>
+    <get_default_settings>
+     <user>sodigsa@ec</user>
+     <password>TIiANcmymJ</password>
+    </get_default_settings>
+    </TEXTAREA>
+    <br><br> <input type="submit" value="Enviar consulta get_default_settings">
+    </form>
+    <form action="http://mailcertapi.lleida.net/cgi-bin/mailcertapi.cgi" method="post">
+        <TEXTAREA rows="8" cols="100%" NAME="xml">
+        <?xml version='1.0' encoding='iso-8859-1'?>
+        <get_pdf_content>
+         <user>sodigsa@ec</user>
+         <password>TIiANcmymJ</password>
+         <file_id>74448294</file_id>
+        </get_pdf_content>
+        </TEXTAREA>
+        <br><br> <input type="submit" value="Enviar consulta get_pdf_content">
+      </form>
+
+    </form>
+    <form action="http://mailcertapi.lleida.net/cgi-bin/mailcertapi.cgi" method="post">
+        <TEXTAREA rows="8" cols="100%" NAME="xml">
+            <?xml version='1.0' encoding='iso-8859-1'?>
+            <list_pdf>
+             <user>sodigsa@ec</user>
+             <password>TIiANcmymJ</password>
+             <mail_date_min>20220518192727</mail_date_min>
+            </list_pdf>
+        </TEXTAREA>
+        <br><br> <input type="submit" value="Enviar consulta get_pdf_content">
+      </form>
+</body></html>
