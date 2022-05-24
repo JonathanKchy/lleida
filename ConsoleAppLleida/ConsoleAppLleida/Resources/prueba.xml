@@ -1,0 +1,111 @@
+<result>
+<action>list_pdf</action>
+<status>100</status>
+<msg>Success</msg>
+<pdf_list row_order="asc" rows_found="4" rows_ok="2" rows_ko="2" rows_nodoc="0" mail_date_min="20220521063000">
+<pdf_row>
+<mail_id>99498353</mail_id>
+<mail_date>20220521063129</mail_date>
+<mail_from>fotomultas@epmtsd.gob.ec</mail_from>
+<mail_to>nose@hotmail.com fotomultas-noreply@epmtsd.gob.ec</mail_to>
+<mail_type>IN</mail_type>
+<mail_subj>EPMT-SD</mail_subj>
+<mail_subj_dec charset="UTF-8" encoding="base64">RVBNVC1TRA==</mail_subj_dec>
+<mail_message_id><573673894.33.1653107540938@srv-ses.byphone.com></mail_message_id>
+<child_mail_id>99498365</child_mail_id>
+<child_mail_from>441194@mailcert.lleida.net</child_mail_from>
+<child_mail_to>nose@hotmail.com</child_mail_to>
+<child_mail_type>OU</child_mail_type>
+<credits>7</credits>
+<gstatus>delivered</gstatus>
+<gstatus_aux/>
+<file_doc_model>OK</file_doc_model>
+<file_id>76571201</file_id>
+<file_status>5</file_status>
+<file_status_desc>Finished pdf</file_status_desc>
+<file_type>S</file_type>
+<file_uid>E76571201-S</file_uid>
+<file_name>20220520l91l5211.pdf</file_name>
+<file_last_update>20220521063253</file_last_update>
+<add_id/>
+</pdf_row>
+<pdf_row>
+<mail_id>99498353</mail_id>
+<mail_date>20220521063129</mail_date>
+<mail_from>fotomultas@epmtsd.gob.ec</mail_from>
+<mail_to>nose@hotmail.com fotomultas-noreply@epmtsd.gob.ec</mail_to>
+<mail_type>IN</mail_type>
+<mail_subj>EPMT-SD</mail_subj>
+<mail_subj_dec charset="UTF-8" encoding="base64">RVBNVC1TRA==</mail_subj_dec>
+<mail_message_id><573673894.33.1653107540938@srv-ses.byphone.com></mail_message_id>
+<child_mail_id>99498366</child_mail_id>
+<child_mail_from>441194@mailcert.lleida.net</child_mail_from>
+<child_mail_to>fotomultas-noreply@epmtsd.gob.ec</child_mail_to>
+<child_mail_type>OU</child_mail_type>
+<credits>7</credits>
+<gstatus>bounced</gstatus>
+<gstatus_aux>5.0.0</gstatus_aux>
+<file_doc_model>KO</file_doc_model>
+<file_id>76571200</file_id>
+<file_status>5</file_status>
+<file_status_desc>Finished pdf</file_status_desc>
+<file_type>S</file_type>
+<file_uid>E76571200-S</file_uid>
+<file_name>20220521m88m631.pdf</file_name>
+<file_last_update>20220521063253</file_last_update>
+<add_id/>
+</pdf_row>
+<pdf_row>
+<mail_id>99498381</mail_id>
+<mail_date>20220521063509</mail_date>
+<mail_from>fotomultas@epmtsd.gob.ec</mail_from>
+<mail_to>emmanuelandy@hotmail.com fotomultas-noreply@epmtsd.gob.ec</mail_to>
+<mail_type>IN</mail_type>
+<mail_subj>EPMT-SD</mail_subj>
+<mail_subj_dec charset="UTF-8" encoding="base64">RVBNVC1TRA==</mail_subj_dec>
+<mail_message_id><1536031937.35.1653107770424@srv-ses.byphone.com></mail_message_id>
+<child_mail_id>99498383</child_mail_id>
+<child_mail_from>441194@mailcert.lleida.net</child_mail_from>
+<child_mail_to>emmanuelandy@hotmail.com</child_mail_to>
+<child_mail_type>OU</child_mail_type>
+<credits>7</credits>
+<gstatus>delivered</gstatus>
+<gstatus_aux/>
+<file_doc_model>OK</file_doc_model>
+<file_id>76571231</file_id>
+<file_status>5</file_status>
+<file_status_desc>Finished pdf</file_status_desc>
+<file_type>S</file_type>
+<file_uid>E76571231-S</file_uid>
+<file_name>20220521m88m632.pdf</file_name>
+<file_last_update>20220521063635</file_last_update>
+<add_id/>
+</pdf_row>
+<pdf_row>
+<mail_id>99498381</mail_id>
+<mail_date>20220521063509</mail_date>
+<mail_from>fotomultas@epmtsd.gob.ec</mail_from>
+<mail_to>emmanuelandy@hotmail.com fotomultas-noreply@epmtsd.gob.ec</mail_to>
+<mail_type>IN</mail_type>
+<mail_subj>EPMT-SD</mail_subj>
+<mail_subj_dec charset="UTF-8" encoding="base64">RVBNVC1TRA==</mail_subj_dec>
+<mail_message_id><1536031937.35.1653107770424@srv-ses.byphone.com></mail_message_id>
+<child_mail_id>99498384</child_mail_id>
+<child_mail_from>441194@mailcert.lleida.net</child_mail_from>
+<child_mail_to>fotomultas-noreply@epmtsd.gob.ec</child_mail_to>
+<child_mail_type>OU</child_mail_type>
+<credits>7</credits>
+<gstatus>bounced</gstatus>
+<gstatus_aux>5.0.0</gstatus_aux>
+<file_doc_model>KO</file_doc_model>
+<file_id>76571230</file_id>
+<file_status>5</file_status>
+<file_status_desc>Finished pdf</file_status_desc>
+<file_type>S</file_type>
+<file_uid>E76571230-S</file_uid>
+<file_name>20220520l91l5212.pdf</file_name>
+<file_last_update>20220521063635</file_last_update>
+<add_id/>
+</pdf_row>
+</pdf_list>
+</result>

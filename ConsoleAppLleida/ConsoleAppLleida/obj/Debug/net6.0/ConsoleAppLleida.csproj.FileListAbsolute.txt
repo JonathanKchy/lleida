@@ -1,0 +1,15 @@
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\ConsoleAppLleida.exe
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\ConsoleAppLleida.deps.json
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\ConsoleAppLleida.runtimeconfig.json
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\ConsoleAppLleida.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\ConsoleAppLleida.pdb
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.csproj.AssemblyReference.cache
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.GeneratedMSBuildEditorConfig.editorconfig
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.AssemblyInfoInputs.cache
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.AssemblyInfo.cs
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.csproj.CoreCompileInputs.cache
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\refint\ConsoleAppLleida.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.pdb
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.genruntimeconfig.cache
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ref\ConsoleAppLleida.dll
