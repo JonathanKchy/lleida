@@ -13,3 +13,12 @@ E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\refint\Conso
 E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.pdb
 E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.genruntimeconfig.cache
 E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ref\ConsoleAppLleida.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\SpreadsheetLight.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\System.Drawing.Common.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\System.IO.Packaging.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+E:\classs\lleida\ConsoleAppLleida\ConsoleAppLleida\obj\Debug\net6.0\ConsoleAppLleida.csproj.CopyComplete

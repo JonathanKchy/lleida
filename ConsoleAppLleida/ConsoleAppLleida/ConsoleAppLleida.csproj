@@ -11,4 +11,8 @@
     <Folder Include="Resources\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="SpreadsheetLight.Fork" Version="3.5.0" />
+  </ItemGroup>
+
 </Project>

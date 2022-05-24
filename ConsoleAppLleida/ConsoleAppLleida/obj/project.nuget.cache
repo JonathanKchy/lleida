@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "/I2HzhghUaaUNsAjO/fDpioEMAd22zd24XRujHiofInn5HrIiaodHn0GGNAOYb/vx+z8O5Z3JFOH7qvrvPEaBQ==",
+  "dgSpecHash": "sUSO6s1AaV9G9bTW7kZVWvIn5vQgrHI9260vb0W/XXfqIEtYl3MoasN4rXxePT/GkjiCTCRUjtCdcZbpVinsqQ==",
   "success": true,
   "projectFilePath": "E:\\classs\\lleida\\ConsoleAppLleida\\ConsoleAppLleida\\ConsoleAppLleida.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\documentformat.openxml\\2.11.3\\documentformat.openxml.2.11.3.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\spreadsheetlight.fork\\3.5.0\\spreadsheetlight.fork.3.5.0.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
