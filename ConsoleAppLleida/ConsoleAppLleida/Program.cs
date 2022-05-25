@@ -13,13 +13,105 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
         internal static int contador=0,marce=0;
         internal static SLDocument osLDocument = new SLDocument();
         internal static System.Data.DataTable dt = new System.Data.DataTable();
-        internal static string mail_id, mail_date, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to,direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate;
+        internal static string mail_id, mail_date, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to,direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate, add_uid;
 
 
         static void Main(string[] args)
         {
             //documento excel
-            
+            DateTime fechaActual = DateTime.Today;
+            Console.WriteLine(fechaActual.Year);
+            int ano2,mes2,dia2;
+            bool condicion=false;
+            string ano, mes, dia;
+            do
+            {
+                do
+                {
+                    Console.WriteLine("Ingrese año: ");
+                    ano = Console.ReadLine();
+                    try
+                    {
+                        ano2 = Int32.Parse(ano);
+                        if (2021 <= ano2 && ano2 <= fechaActual.Year)
+                        {
+                            Console.WriteLine("correcto");
+                            condicion = true;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Ingrese un número entre 2021 y 2022");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Ingrese un número entre 2021 y 2022");
+                    }
+
+                } while (condicion == false);
+                //mes
+                condicion = false;
+                do
+                {
+                    Console.WriteLine("Ingrese mes: ");
+                    mes = Console.ReadLine();
+                    try
+                    {
+                        mes2 = Int32.Parse(mes);
+                        if (1<= mes2 && mes2 <= 12)
+                        {
+                            
+                            condicion = true;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Ingrese un número entre 1 y 12");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Ingrese un número entre 1 y 12");
+                    }
+
+                } while (condicion == false);
+
+                //dia
+                /*condicion = false;
+                do
+                {
+                    Console.WriteLine("Ingrese dia: ");
+                    String dia;
+                    dia = Console.ReadLine();
+                    try
+                    {
+                        dia2 = Int32.Parse(dia);
+                        if (1 <= dia2 && dia2 <= 31)
+                        {
+                            Console.WriteLine("correcto");
+                            condicion = true;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Ingrese un número entre 1 y 12");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Ingrese un número entre 1 y 12");
+                    }
+
+                } while (condicion == false);*/
+
+                
+
+            } while (condicion == false);
+
             
             //columnas
             dt.Columns.Add("Id", typeof(string));
@@ -39,12 +131,20 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             dt.Columns.Add("Add_UID", typeof(string));
 
 
+            //string hola = "0123456789abcd";
+            //Console.WriteLine(hola);
+            //hola = hola.Substring(6,2) + "/" + hola.Substring(4,2) + "/" + hola.Substring(0, 4) + " " + hola.Substring(8,2) + ":" + hola.Substring(10,2) + ":" + hola.Substring(12,2);
+            //hola = hola.Substring(5,2);//+"/"+hola.Substring(0,4);
+            //Console.WriteLine(hola);
 
-            string path=Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\prueba.xml");
-            UsingXmlReader("https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220524232953");
-            string pathFile = AppDomain.CurrentDomain.BaseDirectory + "miExcel.xlsx";
+            //string path=Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\prueba.xml");
+            string fechaInicio = ano + mes;
+            string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=2022"+"0501070000&mail_date_max=20220509070000";
+            UsingXmlReader(pathFecha);
+            //porNodos("https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_id=83626454");
+             string pathFile = AppDomain.CurrentDomain.BaseDirectory + "miExcel_Mayo_fecha.xlsx";
             //string pathFile = AppDomain.CurrentDomain.BaseDirectory + "miExcel.xlsx";
-            //irExcel(pathFile);
+             irExcel(pathFile);
            
         }
 
@@ -62,7 +162,11 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                 }
                 if(contador == 2)
                 {
-                    dt.Rows.Add(mail_id, mail_date, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate);
+                    
+                    dt.Rows.Add(mail_id, mail_date, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate,add_uid);
+                    add_displaydate = "";
+                    add_uid = "";
+                    add_id = "";
                     Console.WriteLine("envio datos");
                     contador=contador-1;
                 }
@@ -76,6 +180,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                 else if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "mail_date"))
                 {
                     mail_date = xmlReader.ReadElementContentAsString();
+                    //mail_date = mail_date.Substring(6, 2) + "/" + mail_date.Substring(4, 2) + "/" + mail_date.Substring(0, 4) + " " + mail_date.Substring(8, 2) + ":" + mail_date.Substring(10, 2) + ":" + mail_date.Substring(12, 2);
                     Console.WriteLine("mail_date= " + mail_date);
                                      
                 }
@@ -139,13 +244,24 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                 else if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "add_id"))
                 {
                     add_id = xmlReader.ReadElementContentAsString();
+                    if (add_id!="")
+                    {
+                        add_uid = "E" + add_id + "-R";
+                        add_id = "Displayed";
+                        
+                    }
+                    else
+                    {
+                        add_id = "";
+                    }
                     Console.WriteLine("add_id= " + add_id);
                     
 
                 }
                 else if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "add_displaydate"))
                 {
-                    add_id = xmlReader.ReadElementContentAsString();
+                    add_displaydate = xmlReader.ReadElementContentAsString();
+                    //add_displaydate = add_displaydate.Substring(6, 2) + "/" + add_displaydate.Substring(4, 2) + "/" + add_displaydate.Substring(0, 4) + " " + add_displaydate.Substring(8, 2) + ":" + add_displaydate.Substring(10, 2) + ":" + add_displaydate.Substring(12, 2);
                     Console.WriteLine("add_displaydate= " + add_id);
                     Console.WriteLine("\n");
 
@@ -154,8 +270,21 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
 
             }
             
-            Console.ReadKey();
         }
+
+
+        //con xmlDocument++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        /*private static void porNodos(string path)
+        {
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load("https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_id=83626454");
+
+            foreach (XmlNode xmlNode in xmlDocument.DocumentElement.ChildNodes[0].ChildNodes)
+            {
+                Console.WriteLine(xmlNode.GetNamespaceOfPrefix);
+            }
+        }*/
+
 
         public static void irExcel(string pathFile)
         {
@@ -169,6 +298,8 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             //donde iniciamos
             osLDocument.ImportDataTable(1,1,dt,true);
             osLDocument.SaveAs(pathFile);
+            Console.WriteLine("presiona key");
+            Console.ReadKey();
 
         }
 
