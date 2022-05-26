@@ -20,14 +20,16 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
         {
             //documento excel
             DateTime fechaActual = DateTime.Today;
-            Console.WriteLine(fechaActual.Year);
-            int ano2,mes2,dia2;
+            //Console.WriteLine(fechaActual.Year);
+            int ano2=2021,mes2=0,dia2;
             bool condicion=false;
             string ano, mes, dia;
             do
             {
+                Console.WriteLine("Por favor ingresar fecha inicial desde donde desea el reporte.");
                 do
                 {
+                    
                     Console.WriteLine("Ingrese año: ");
                     ano = Console.ReadLine();
                     try
@@ -41,13 +43,13 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                         else
                         {
                             Console.Clear();
-                            Console.WriteLine("Ingrese un número entre 2021 y 2022");
+                            Console.WriteLine("Ingrese un número entre 2021 y " + fechaActual.Year.ToString());
                         }
                     }
                     catch (Exception e)
                     {
                         Console.Clear();
-                        Console.WriteLine("Ingrese un número entre 2021 y 2022");
+                        Console.WriteLine("Ingrese un número entre 2021 y "+fechaActual.Year.ToString());
                     }
 
                 } while (condicion == false);
@@ -60,15 +62,32 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                     try
                     {
                         mes2 = Int32.Parse(mes);
-                        if (1<= mes2 && mes2 <= 12)
+
+                        if (ano2==fechaActual.Year)
                         {
-                            
-                            condicion = true;
+                            if (1 <= mes2 && mes2 <= fechaActual.Month)
+                            {
+
+                                condicion = true;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("El mes ingresado es mayor al actual");
+                            }
                         }
                         else
                         {
-                            Console.Clear();
-                            Console.WriteLine("Ingrese un número entre 1 y 12");
+                            if (1 <= mes2 && mes2 <= 12)
+                            {
+
+                                condicion = true;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Ingrese un número entre 1 y 12");
+                            }
                         }
                     }
                     catch (Exception e)
@@ -138,11 +157,43 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             //Console.WriteLine(hola);
 
             //string path=Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\prueba.xml");
-            string fechaInicio = ano + mes;
-            string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=2022"+"0501070000&mail_date_max=20220509070000";
+            int mesFin = 0, anoFin = 0;
+            string fechaInicio = "",fechaFin=""; 
+            if (mes2<10)
+            {
+                mes = "0" + mes;
+                fechaInicio= ano + mes + "01070000";
+                               
+            }           
+            else 
+            {
+
+                fechaInicio = ano + mes + "01070000";
+            }
+            
+            mesFin = mes2 + 1;
+            if (mesFin < 10)
+            {
+                fechaFin = ano + "0" + mesFin.ToString() + "01070000";
+                
+            }
+            else if (mesFin == 13)
+            {
+                anoFin=ano2 + 1;
+                mesFin = 1;
+                fechaFin = anoFin + "0" + mesFin.ToString() + "01070000";
+            }
+            else
+            {
+                fechaFin = ano + mesFin.ToString() + "01070000";
+            }
+            Console.WriteLine(fechaInicio);
+            Console.WriteLine("fechafin: "+fechaFin);
+            Console.WriteLine("Espere...");
+            string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min="+fechaInicio+"&mail_date_max="+fechaFin;
             UsingXmlReader(pathFecha);
             //porNodos("https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_id=83626454");
-             string pathFile = AppDomain.CurrentDomain.BaseDirectory + "miExcel_Mayo_fecha.xlsx";
+             string pathFile = AppDomain.CurrentDomain.BaseDirectory + "Sodig_lleida_"+ano+"_"+mes+".xlsx";
             //string pathFile = AppDomain.CurrentDomain.BaseDirectory + "miExcel.xlsx";
              irExcel(pathFile);
            
