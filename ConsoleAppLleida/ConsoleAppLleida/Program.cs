@@ -190,10 +190,19 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             Console.WriteLine(fechaInicio);
             Console.WriteLine("fechafin: "+fechaFin);
             Console.WriteLine("Espere...");
-            string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min="+fechaInicio+"&mail_date_max="+fechaFin;
+            //string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min="+fechaInicio+"&mail_date_max="+fechaFin;
+            string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220101070000&mail_date_max=20220201070000";
+            UsingXmlReader(pathFecha);
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220201070000&mail_date_max=20220301070000";
+            UsingXmlReader(pathFecha);
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220301070000&mail_date_max=20220401070000";
+            UsingXmlReader(pathFecha);
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220401070000&mail_date_max=20220501070000";
+            UsingXmlReader(pathFecha);
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220501070000";
             UsingXmlReader(pathFecha);
             //porNodos("https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_id=83626454");
-             string pathFile = AppDomain.CurrentDomain.BaseDirectory + "Sodig_lleida_"+ano+"_"+mes+".xlsx";
+            string pathFile = AppDomain.CurrentDomain.BaseDirectory + "todin"+ano+"_"+mes+".xlsx";
             //string pathFile = AppDomain.CurrentDomain.BaseDirectory + "miExcel.xlsx";
              irExcel(pathFile);
            
@@ -231,7 +240,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                 else if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "mail_date"))
                 {
                     mail_date = xmlReader.ReadElementContentAsString();
-                    //mail_date = mail_date.Substring(6, 2) + "/" + mail_date.Substring(4, 2) + "/" + mail_date.Substring(0, 4) + " " + mail_date.Substring(8, 2) + ":" + mail_date.Substring(10, 2) + ":" + mail_date.Substring(12, 2);
+                    mail_date = mail_date.Substring(6, 2) + "/" + mail_date.Substring(4, 2) + "/" + mail_date.Substring(0, 4) + " " + mail_date.Substring(8, 2) + ":" + mail_date.Substring(10, 2) + ":" + mail_date.Substring(12, 2);
                     Console.WriteLine("mail_date= " + mail_date);
                                      
                 }
@@ -312,7 +321,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                 else if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "add_displaydate"))
                 {
                     add_displaydate = xmlReader.ReadElementContentAsString();
-                    //add_displaydate = add_displaydate.Substring(6, 2) + "/" + add_displaydate.Substring(4, 2) + "/" + add_displaydate.Substring(0, 4) + " " + add_displaydate.Substring(8, 2) + ":" + add_displaydate.Substring(10, 2) + ":" + add_displaydate.Substring(12, 2);
+                    add_displaydate = add_displaydate.Substring(6, 2) + "/" + add_displaydate.Substring(4, 2) + "/" + add_displaydate.Substring(0, 4) + " " + add_displaydate.Substring(8, 2) + ":" + add_displaydate.Substring(10, 2) + ":" + add_displaydate.Substring(12, 2);
                     Console.WriteLine("add_displaydate= " + add_id);
                     Console.WriteLine("\n");
 
@@ -320,7 +329,8 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
 
 
             }
-            
+            dt.Rows.Add(mail_id, mail_date, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate, add_uid);
+
         }
 
 
@@ -339,17 +349,18 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
 
         public static void irExcel(string pathFile)
         {
-            
+
 
             //registros 
-           /* dt.Rows.Add("pepe",19,"hombre");
-            dt.Rows.Add("andres", 27, "hombre");
-            dt.Rows.Add("Eve", 10, "mujer");*/
+            /* dt.Rows.Add("pepe",19,"hombre");
+             dt.Rows.Add("andres", 27, "hombre");
+             dt.Rows.Add("Eve", 10, "mujer");*/
 
             //donde iniciamos
+            Console.WriteLine("Espere XD...");
             osLDocument.ImportDataTable(1,1,dt,true);
             osLDocument.SaveAs(pathFile);
-            Console.WriteLine("presiona key");
+            Console.WriteLine("presiona algo");
             Console.ReadKey();
 
         }
