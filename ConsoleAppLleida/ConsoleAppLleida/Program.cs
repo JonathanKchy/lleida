@@ -4,6 +4,8 @@ using System.Reflection;
 using System.Xml;
 using System;
 using SpreadsheetLight;
+using System.Windows;
+using Microsoft.Win32;
 
 namespace ConsoleAppLleida // Note: actual namespace depends on the project name.
 {
@@ -24,7 +26,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             int ano2=2021,mes2=0,dia2;
             bool condicion=false;
             string ano, mes, dia;
-            do
+           /* do
             {
                 Console.WriteLine("Por favor ingresar fecha inicial desde donde desea el reporte.");
                 do
@@ -125,11 +127,11 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                         Console.WriteLine("Ingrese un número entre 1 y 12");
                     }
 
-                } while (condicion == false);*/
+                } while (condicion == false);
 
                 
 
-            } while (condicion == false);
+            } while (condicion == false);*/
 
             
             //columnas
@@ -159,7 +161,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             //string path=Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\prueba.xml");
             int mesFin = 0, anoFin = 0;
             string fechaInicio = "",fechaFin=""; 
-            if (mes2<10)
+            /*if (mes2<10)
             {
                 mes = "0" + mes;
                 fechaInicio= ano + mes + "01070000";
@@ -188,24 +190,37 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                 fechaFin = ano + mesFin.ToString() + "01070000";
             }
             Console.WriteLine(fechaInicio);
-            Console.WriteLine("fechafin: "+fechaFin);
+            Console.WriteLine("fechafin: "+fechaFin);*/
             Console.WriteLine("Espere...");
             //string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min="+fechaInicio+"&mail_date_max="+fechaFin;
+            
             string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220101070000&mail_date_max=20220201070000";
-            UsingXmlReader(pathFecha);
+           UsingXmlReader(pathFecha);
+            Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220201070000&mail_date_max=20220301070000";
             UsingXmlReader(pathFecha);
+            Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220301070000&mail_date_max=20220401070000";
             UsingXmlReader(pathFecha);
+            Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220401070000&mail_date_max=20220501070000";
             UsingXmlReader(pathFecha);
-            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220501070000";
+            Console.WriteLine("\nEspere...");
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220501070000&mail_date_max=20220601070000";
             UsingXmlReader(pathFecha);
+            Console.WriteLine("\nEspere...");
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220601070000";
+            UsingXmlReader(pathFecha);
+                      
             //porNodos("https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_id=83626454");
-            string pathFile = AppDomain.CurrentDomain.BaseDirectory + "todin"+ano+"_"+mes+".xlsx";
+            string pathFile = AppDomain.CurrentDomain.BaseDirectory + "todin.xlsx";
+            pathFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"\\LleidaEnero_Junio.xlsx";
+            
+            //string pathFile = Environment + "holaa.xlsx";
             //string pathFile = AppDomain.CurrentDomain.BaseDirectory + "miExcel.xlsx";
-             irExcel(pathFile);
-           
+            irExcel(pathFile);
+            Console.WriteLine("El archivo se guardó en: " + pathFile);
+
         }
 
         private static void UsingXmlReader(string path)
