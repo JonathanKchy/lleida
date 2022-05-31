@@ -193,21 +193,26 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             Console.WriteLine("fechafin: "+fechaFin);*/
             Console.WriteLine("Espere...");
             //string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min="+fechaInicio+"&mail_date_max="+fechaFin;
-            
+           
             string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220101070000&mail_date_max=20220201070000";
-           UsingXmlReader(pathFecha);
+            /*UsingXmlReader(pathFecha);
+            contador = 0;
             Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220201070000&mail_date_max=20220301070000";
             UsingXmlReader(pathFecha);
+            contador = 0;
             Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220301070000&mail_date_max=20220401070000";
             UsingXmlReader(pathFecha);
+            contador = 0;
             Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220401070000&mail_date_max=20220501070000";
             UsingXmlReader(pathFecha);
+            contador = 0;*/
             Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220501070000&mail_date_max=20220601070000";
             UsingXmlReader(pathFecha);
+            contador = 0;
             Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220601070000";
             UsingXmlReader(pathFecha);

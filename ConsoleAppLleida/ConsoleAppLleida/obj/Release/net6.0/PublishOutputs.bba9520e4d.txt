@@ -1,0 +1,13 @@
+C:\Users\Andrés Aymacaña\Desktop\SodigLleida.exe
+C:\Users\Andrés Aymacaña\Desktop\SodigLleida.dll
+C:\Users\Andrés Aymacaña\Desktop\SodigLleida.deps.json
+C:\Users\Andrés Aymacaña\Desktop\SodigLleida.runtimeconfig.json
+C:\Users\Andrés Aymacaña\Desktop\SodigLleida.pdb
+C:\Users\Andrés Aymacaña\Desktop\DocumentFormat.OpenXml.dll
+C:\Users\Andrés Aymacaña\Desktop\Microsoft.Win32.SystemEvents.dll
+C:\Users\Andrés Aymacaña\Desktop\SpreadsheetLight.dll
+C:\Users\Andrés Aymacaña\Desktop\System.Drawing.Common.dll
+C:\Users\Andrés Aymacaña\Desktop\System.IO.Packaging.dll
+C:\Users\Andrés Aymacaña\Desktop\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Andrés Aymacaña\Desktop\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Andrés Aymacaña\Desktop\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

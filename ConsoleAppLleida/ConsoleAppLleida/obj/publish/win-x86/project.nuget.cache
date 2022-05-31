@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "sY+IJFyOzjdigpQYv8JbyvGEKombgiawrI4aCt2+90HSIDNv4Lb0rJDrf89eROTFGfSbemjVnAMnAkUk5ccR3g==",
+  "success": true,
+  "projectFilePath": "E:\\classs\\lleida\\ConsoleAppLleida\\ConsoleAppLleida\\ConsoleAppLleida.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\documentformat.openxml\\2.11.3\\documentformat.openxml.2.11.3.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\spreadsheetlight.fork\\3.5.0\\spreadsheetlight.fork.3.5.0.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.4\\microsoft.netcore.app.runtime.win-x86.6.0.4.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.4\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.4.nupkg.sha512",
+    "C:\\Users\\Andrés Aymacaña\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.4\\microsoft.aspnetcore.app.runtime.win-x86.6.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
