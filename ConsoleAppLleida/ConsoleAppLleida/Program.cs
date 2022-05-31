@@ -15,7 +15,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
         internal static int contador=0,marce=0;
         internal static SLDocument osLDocument = new SLDocument();
         internal static System.Data.DataTable dt = new System.Data.DataTable();
-        internal static string mail_id, mail_date, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to,direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate, add_uid;
+        internal static string mail_id, mail_date,fecha_andre, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to,direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate, add_uid;
 
 
         static void Main(string[] args)
@@ -136,7 +136,8 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             
             //columnas
             dt.Columns.Add("Id", typeof(string));
-            dt.Columns.Add("Fecha", typeof(string));
+            dt.Columns.Add("Fecha Lleida", typeof(string));
+            dt.Columns.Add("Fecha Local", typeof(string));
             dt.Columns.Add("Tipo", typeof(string));
             dt.Columns.Add("Doc_OkKo", typeof(string));
             dt.Columns.Add("Doc_UID", typeof(string));
@@ -195,7 +196,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             //string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min="+fechaInicio+"&mail_date_max="+fechaFin;
            
             string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220101070000&mail_date_max=20220201070000";
-            /*UsingXmlReader(pathFecha);
+            UsingXmlReader(pathFecha);
             contador = 0;
             Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220201070000&mail_date_max=20220301070000";
@@ -208,7 +209,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220401070000&mail_date_max=20220501070000";
             UsingXmlReader(pathFecha);
-            contador = 0;*/
+            contador = 0;
             Console.WriteLine("\nEspere...");
             pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220501070000&mail_date_max=20220601070000";
             UsingXmlReader(pathFecha);
@@ -230,7 +231,9 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
 
         private static void UsingXmlReader(string path)
         {
-            
+            int dia_anterior = 1;
+
+
             XmlReader xmlReader=XmlReader.Create(path);
 
             while (xmlReader.Read())
@@ -243,7 +246,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                 if(contador == 2)
                 {
                     
-                    dt.Rows.Add(mail_id, mail_date, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate,add_uid);
+                    dt.Rows.Add(mail_id, mail_date,fecha_andre, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate,add_uid);
                     add_displaydate = "";
                     add_uid = "";
                     add_id = "";
@@ -260,7 +263,124 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                 else if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "mail_date"))
                 {
                     mail_date = xmlReader.ReadElementContentAsString();
+                    int andre_dia, andre_hora,mes_andre;
+                    string andre_dia_string,andre_hora_string="01";
+                    mes_andre = Int32.Parse( mail_date.Substring(4, 2));
+                    andre_dia = Int32.Parse(mail_date.Substring(6, 2));
+                    andre_hora = Int32.Parse(mail_date.Substring(8, 2));
+                    if (dia_anterior <=andre_dia)
+                    {
+                        dia_anterior = andre_dia;
+                    }
+                    switch (andre_hora)
+                    {
+                        case 23:
+                            andre_hora_string = "16";
+                            break;
+                        case 22:
+                            andre_hora_string = "15";
+                            break;
+                        case 21:
+                            andre_hora_string = "14";
+                            break;
+                        case 20:
+                            andre_hora_string = "13";
+                            break;
+                        case 19:
+                            andre_hora_string = "12";
+                            break;
+                        case 18:
+                            andre_hora_string = "11";
+                            break;
+                        case 17:
+                            andre_hora_string = "10";
+                            break;
+                        case 16:
+                            andre_hora_string = "09";
+                            break;
+                        case 15:
+                            andre_hora_string = "08";
+                            break;
+                        case 14:
+                            andre_hora_string = "07";
+                            break;
+                        case 13:
+                            andre_hora_string = "06";
+                            break;
+                        case 12:
+                            andre_hora_string = "05";
+                            break;
+                        case 11:
+                            andre_hora_string = "04";
+                            break;
+                        case 10:
+                            andre_hora_string = "03";
+                            break;
+                        case 9:
+                            andre_hora_string = "02";
+                            break;
+                        case 8:
+                            andre_hora_string = "01";
+                            break ;
+                        case 7:
+                            andre_hora_string = "00";
+                            break;
+                        case 6:
+                            andre_hora_string = "23";
+                            break;
+                        case 5:
+                            andre_hora_string = "22";
+                            break;
+                        case 4:
+                            andre_hora_string = "21";
+                            break;
+                        case 3:
+                            andre_hora_string = "20";
+                            break;
+                        case 2:
+                            andre_hora_string = "19";
+                            break;
+                        case 1:
+                            andre_hora_string = "18";
+                            break;
+                        case 0:
+                            andre_hora_string = "17";
+                            break;
+                        default:
+                            break;
+                    }
+                    if (andre_hora<7)
+                    {
+                        andre_dia = andre_dia-1;
+                        if (andre_dia==0)
+                        {
+                            andre_dia = dia_anterior;
+                            mes_andre = mes_andre - 1;
+                        }
+                        /*switch (andre_dia)
+                        {
+                            case 3:
+                                andre_hora_string = "20";
+                                break;
+                            case 2:
+                                andre_hora_string = "19";
+                                break;
+                            case 1:
+                                andre_hora_string = "18";
+                                break;
+                            case 0:
+                                andre_hora_string = "17";
+                                break;
+                            default:
+                                break;
+                        }*/
+                    }
+                    fecha_andre = andre_dia + "/" +mes_andre + "/" + mail_date.Substring(0, 4) + " " + andre_hora_string + ":" + mail_date.Substring(10, 2) + ":" + mail_date.Substring(12, 2);
                     mail_date = mail_date.Substring(6, 2) + "/" + mail_date.Substring(4, 2) + "/" + mail_date.Substring(0, 4) + " " + mail_date.Substring(8, 2) + ":" + mail_date.Substring(10, 2) + ":" + mail_date.Substring(12, 2);
+
+
+
+
                     Console.WriteLine("mail_date= " + mail_date);
                                      
                 }
@@ -349,7 +469,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
 
 
             }
-            dt.Rows.Add(mail_id, mail_date, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate, add_uid);
+            dt.Rows.Add(mail_id, mail_date,fecha_andre, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate, add_uid);
 
         }
 
