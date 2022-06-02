@@ -161,7 +161,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
 
             //string path=Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources\prueba.xml");
             int mesFin = 0, anoFin = 0;
-            string fechaInicio = "",fechaFin=""; 
+            string fechaInicio = "",fechaFin="";
             /*if (mes2<10)
             {
                 mes = "0" + mes;
@@ -192,38 +192,36 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
             }
             Console.WriteLine(fechaInicio);
             Console.WriteLine("fechafin: "+fechaFin);*/
-            Console.WriteLine("Espere...");
-            //string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min="+fechaInicio+"&mail_date_max="+fechaFin;
-           
-            string pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220101070000&mail_date_max=20220201070000";
-            UsingXmlReader(pathFecha);
+            string pathFecha = "";         
+               
             contador = 0;
             Console.WriteLine("\nEspere...");
-            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220201070000&mail_date_max=20220301070000";
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220501070000&mail_date_max=20220504070000";
             UsingXmlReader(pathFecha);
+
             contador = 0;
             Console.WriteLine("\nEspere...");
-            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220301070000&mail_date_max=20220401070000";
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220504070000&mail_date_max=20220511070000";
             UsingXmlReader(pathFecha);
+
             contador = 0;
             Console.WriteLine("\nEspere...");
-            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220401070000&mail_date_max=20220501070000";
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220511070000&mail_date_max=20220523070000";
             UsingXmlReader(pathFecha);
+
             contador = 0;
             Console.WriteLine("\nEspere...");
-            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220501070000&mail_date_max=20220601070000";
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220523070000&mail_date_max=20220528070000";
             UsingXmlReader(pathFecha);
+
             contador = 0;
             Console.WriteLine("\nEspere...");
-            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220601070000";
+            pathFecha = "https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_date_min=20220528070000&mail_date_max=20220601070000";
             UsingXmlReader(pathFecha);
-                      
+
             //porNodos("https://tsa.lleida.net/cgi-bin/mailcertapi.cgi?action=list_pdf&user=sodigsa@ec&password=TIiANcmymJ&mail_id=83626454");
-            string pathFile = AppDomain.CurrentDomain.BaseDirectory + "todin.xlsx";
-            pathFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"\\LleidaEnero_Junio.xlsx";
-            
-            //string pathFile = Environment + "holaa.xlsx";
-            //string pathFile = AppDomain.CurrentDomain.BaseDirectory + "miExcel.xlsx";
+            //pathFile = AppDomain.CurrentDomain.BaseDirectory + "todin.xlsx";
+            string pathFile = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"\\mayoAndre.xlsx";
             irExcel(pathFile);
             Console.WriteLine("El archivo se guardó en: " + pathFile);
 
@@ -245,7 +243,8 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                 }
                 if(contador == 2)
                 {
-                    
+                    //dt.Rows.Add(mail_id, mail_date, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate, add_uid);
+                    //fecha andre
                     dt.Rows.Add(mail_id, mail_date,fecha_andre, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate,add_uid);
                     add_displaydate = "";
                     add_uid = "";
@@ -376,6 +375,7 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
                         }*/
                     }
                     fecha_andre = andre_dia + "/" +mes_andre + "/" + mail_date.Substring(0, 4) + " " + andre_hora_string + ":" + mail_date.Substring(10, 2) + ":" + mail_date.Substring(12, 2);
+                    
                     mail_date = mail_date.Substring(6, 2) + "/" + mail_date.Substring(4, 2) + "/" + mail_date.Substring(0, 4) + " " + mail_date.Substring(8, 2) + ":" + mail_date.Substring(10, 2) + ":" + mail_date.Substring(12, 2);
 
 
@@ -469,6 +469,8 @@ namespace ConsoleAppLleida // Note: actual namespace depends on the project name
 
 
             }
+            //dt.Rows.Add(mail_id, mail_date, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate, add_uid);
+            //fecha andre
             dt.Rows.Add(mail_id, mail_date,fecha_andre, mail_type, file_doc_model, file_uid, unidades_certificadas, mail_from, mail_to, direccion_CC, gstatus, gstatus_aux, mail_subj, add_id, add_displaydate, add_uid);
 
         }
